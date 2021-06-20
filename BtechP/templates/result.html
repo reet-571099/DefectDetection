@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+          <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/dash.css')}}">
+          <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+          <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/result.css')}}">
+
+    <title>Defect Detection</title>
+</head>
+{% extends "base.html" %}
+{% block Content %}
+<body>
+
+<br>
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+	<div class="container" style="width: 1300px !important">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active"  id="pic-1"><img style="height:400px; width:400px;" src="../static/images/4207.jpeg" /></div>
+
+						</div>
+
+
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">Category - Defective</h3>
+
+							<span class="review-no">ID No - 5710 </span>
+<!--						<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>-->
+						<h4 class="price">Type of Defect <span> - Hole </span></h4>
+						<p class="vote"><strong>91%</strong> Of Defect Found on this Part </p>
+						<h5 class="sizes"> Graphical Presentation :
+							<img src="https://exceljet.net/sites/default/files/styles/original_with_watermark/public/images/charttypes/bar%20of%20pie%20chart.png?itok=VcMnMg2S">
+						</h5>
+
+						<div class="action">
+							<button class="button2">Download the Report</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='js/app.js')}}"></script>
+
+
+</body>
+</html>
+
+{% endblock %}

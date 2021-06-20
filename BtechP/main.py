@@ -45,4 +45,12 @@ def dashboard():
     return render_template('dashboard.html', name=current_user.name)
 
 
+@main.route('/result')
+def result():
+    return render_template('result.html')
+
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
 
