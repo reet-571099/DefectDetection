@@ -6,7 +6,7 @@
           <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/dash.css')}}">
           <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
           <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/result.css')}}">
-
+	   	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Defect Detection</title>
 </head>
 {% extends "base.html" %}
@@ -43,7 +43,10 @@
 
 						<div class="preview-pic tab-content">
 						  <div class="tab-pane active"  id="pic-1"><img style="height:400px; width:400px;" src="../static/images/4207.jpeg" /></div>
-
+							<br>
+							<br>
+							<br>
+							<a href="./dashboard" class="previous">&laquo; Upload another Image</a>
 						</div>
 
 
@@ -56,11 +59,13 @@
 						<h4 class="price">Type of Defect <span> - Hole </span></h4>
 						<p class="vote"><strong>91%</strong> Of Defect Found on this Part </p>
 						<h5 class="sizes"> Graphical Presentation :
+							<br>
+							<br>
 							<img src="https://exceljet.net/sites/default/files/styles/original_with_watermark/public/images/charttypes/bar%20of%20pie%20chart.png?itok=VcMnMg2S">
 						</h5>
 
 						<div class="action">
-							<button class="button2">Download the Report</button>
+							<button class="btn"><i class="fa fa-download"></i> Download</button>
 						</div>
 					</div>
 				</div>
