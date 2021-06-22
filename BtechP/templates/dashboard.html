@@ -16,7 +16,7 @@
 <br>
 
 <div ><h1 class="title11">
-  Welcome, {{ name }} !
+  Welcome, {{ current_user.name }} !
 </h1></div>
 
 <br>
@@ -35,10 +35,17 @@
    <i class="fa fa-file-text-o pointer-none" aria-hidden="true" style=" margin-left:25%;"></i>
   </div>
   <div class="body"  style=" margin-left:37%;margin-top:-50px;">
-   <p class="pointer-none" style="font-size:20px;"><b>Drag and drop</b>  or <a href="" id="triggerFile">browse</a> </p>
-			<input type="file" multiple="multiple" />
-  </div>
+<!--   <p class="pointer-none" style="font-size:20px;"><b>Drag and drop</b>  or <a href="" id="triggerFile">browse</a> </p>-->
+<!--			<input type="file"  multiple="multiple" />-->
 
+  </div>
+     <br>
+<div>
+    <form action = "/success" method = "post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type = "submit" value="Upload">
+      </form>
+</div>
   <footer>
    <div class="divider">
     <span><AR>FILES</AR></span>
@@ -51,24 +58,25 @@
  </div>
 </div>
  <div class='container2'>
-  <ul>
-    <li>
-      <a href="./result" class='animated-arrow '>
-        <span class='the-arrow -left'>
-          <span class='shaft'></span>
-        </span>
-        <span class='main'>
-         <span class='text' >
-             Click here to Compute the Results
-         </span>
+<!--  <ul>-->
+<!--    <li>-->
+<!--      <a type="submit" class='animated-arrow '>-->
+<!--        <span class='the-arrow -left'>-->
+<!--          <span class='shaft'></span>-->
+<!--        </span>-->
+<!--        <span class='main'>-->
+<!--         <span class='text' >-->
+<!--             Click here to Compute the Results-->
+<!--         </span>-->
 
-          <span class='the-arrow -right'>
-            <span class='shaft'></span>
-         </span>
-        </span>
-      </a>
-    </li>
-  </ul>
+<!--          <span class='the-arrow -right'>-->
+<!--            <span class='shaft'></span>-->
+<!--         </span>-->
+<!--        </span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+     <button  type="submit" value="Submit" class="button" >Compute result</button>
 </div>
     <div class='container3'>
         <div>
