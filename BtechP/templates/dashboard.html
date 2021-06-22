@@ -34,53 +34,68 @@
   <div class="body" id="drop" style=" margin-left:25%;">
    <i class="fa fa-file-text-o pointer-none" aria-hidden="true" style=" margin-left:25%;"></i>
   </div>
-  <div class="body"  style=" margin-left:37%;margin-top:-50px;">
-<!--   <p class="pointer-none" style="font-size:20px;"><b>Drag and drop</b>  or <a href="" id="triggerFile">browse</a> </p>-->
-<!--			<input type="file"  multiple="multiple" />-->
+  <div class="body"  style=" margin-left:37%;margin-top:-90px;">
 
   </div>
-     <br>
 <div>
-    <form action = "/success" method = "post" enctype="multipart/form-data">
-        <input type="file" name="file" />
-        <input type = "submit" value="Upload">
+<!--      <form action = "/dashboard" method = "post" enctype="multipart/form-data">-->
+<!--        <input type="file" name="file" />-->
+<!--        <input type = "submit" value="Upload">-->
+<!--      </form>-->
+
+     <form action = "/dashboard" method = "post" enctype="multipart/form-data">
+        <label  class="custom">
+            <input id="file-upload" type="file" name="file"/>Select Image
+        </label>
+        <input type = "submit" value="Upload" style="color: black;">
       </form>
+
 </div>
-  <footer>
-   <div class="divider">
-    <span><AR>FILES</AR></span>
-   </div>
-   <div class="list-files">
-    <!--   template   -->
-   </div>
-			<button class="importar">UPDATE FILES</button>
-  </footer>
+<hr>
+     <p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+
+     Image Uploaded : {{filename}}
+     {{result}}
+</p>
  </div>
 </div>
  <div class='container2'>
-<!--  <ul>-->
-<!--    <li>-->
-<!--      <a type="submit" class='animated-arrow '>-->
-<!--        <span class='the-arrow -left'>-->
-<!--          <span class='shaft'></span>-->
-<!--        </span>-->
-<!--        <span class='main'>-->
-<!--         <span class='text' >-->
-<!--             Click here to Compute the Results-->
-<!--         </span>-->
+  <ul>
+    <li>
+      <a type="submit" class='animated-arrow '>
+        <span class='the-arrow -left'>
+          <span class='shaft'></span>
+        </span>
+        <span class='main'>
+         <span class='text' >
+             Click here to Compute the Results
+         </span>
 
-<!--          <span class='the-arrow -right'>-->
-<!--            <span class='shaft'></span>-->
-<!--         </span>-->
-<!--        </span>-->
-<!--      </a>-->
-<!--    </li>-->
-<!--  </ul>-->
-     <button  type="submit" value="Submit" class="button" >Compute result</button>
+          <span class='the-arrow -right'>
+            <span class='shaft'></span>
+         </span>
+        </span>
+      </a>
+    </li>
+  </ul>
+<!--     <button  type="submit" value="Submit" name ="compute" class="button" >Compute result</button>-->
+<!--     <form action="/dashboard" method="post"> &lt;!&ndash; or method="post" &ndash;&gt;-->
+<!--        <input type="submit" value="COMPUTE" name="compute" >-->
+<!--         {{result}}-->
+<!--    </form>-->
 </div>
     <div class='container3'>
         <div>
-        <img src="../static/images/No2.png">
+        <img src="../static/images/Yes1.jpg">
         </div>
         <br>
         <br>

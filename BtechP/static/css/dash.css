@@ -549,3 +549,19 @@ a:hover {
   cursor: pointer;
 
 }
+
+
+.custom{
+    border-radius:16px;
+    background-color:#4EB6AC;
+    text-align-last: center;
+    color:Black;
+    width:220px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-left: 23%;
+}
+input[type="file"] {
+    display: none;
+}
