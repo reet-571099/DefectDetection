@@ -1,38 +1,57 @@
-# from flask import Flask, redirect, url_for, render_template
-#
-# app = Flask(__name__)
-#
-# #this is desktop wala copy
-#
-# @app.route("/login")
-# def login():
-#     return render_template('login.html')
-#
-#
-# @app.route("/dashboard")
-# def dash():
-#     return render_template('dashboard.html')
-#
-#
-# @app.route("/about")
-# def about():
-#     return render_template('about.html')
-#
-#
-# @app.route("/")
-# def home():
-#     return render_template('home.html', title='About')
-#
-#
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
 
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
 import os
 
+from flask import Flask, render_template, request
+import numpy as np
+import tensorflow as tf
+from keras.models import load_model
+from keras.preprocessing import image
+
 main = Blueprint('main', __name__)
+
+mapping_class = {0: 'No Defects Found', 1: 'Defective '}
+model_path= r'C:\Users\Ritzz\Desktop\ProjectDD\BtechP\cnn_casting_inspection.hdf5'
+# model = tf.keras.models.load_model(model_path)
+model = tf.keras.models.load_model(model_path)
+#model = load_model(r'C:\Users\Ritzz\Desktop\ProjectDD\BtechP\inspection_of_casting_products.h5')
+
+# model.make_predict_function()
+
+
+model.make_predict_function()
+
+def predict_label(img_path):
+    i = image.load_img(img_path, grayscale=True,target_size=(300,300,1))
+    i = image.img_to_array(i)/255.0
+    i=i.reshape(1,300,300,1)
+    p1=model.predict(i)
+    result = np.argmax(p1,axis=1)
+    pred_label = mapping_class[int(p1 >= 0.5)]
+    prob_class = 100 * p1 if pred_label == "Defect" else 100 * (1 - p1)
+    return pred_label
+
+
+
+
+
+
+@main.route("/success", methods = ['GET', 'POST'])
+def get_output():
+
+    if request.method == 'POST':
+        img = request.files['my_image']
+        img_path = r'C:\Users\Ritzz\Desktop\ProjectDD\BtechP\static\UploadedImages' + img.filename
+        img.save(img_path)
+        p = predict_label(img_path)
+        r="static/"+"UploadedImages"+img.filename
+    return render_template("dashboard.html", prediction=p, img_path1=img_path,res=r)
+    #return render_template("dashboard.html")
+
+
+
+
 upload_folder = r'C:\Users\Ritzz\Desktop\ProjectDD\BtechP\static\UploadedImages'
 
 
@@ -82,11 +101,7 @@ def upload_image():
         return render_template("dashboard.html", filename=f.filename)
 
 
-# @main.route("/dashboard", methods=['POST'])
-# def button():
-#        v = 0
-#        if request.method == "POST":
-#         if upload_image.filename == "4207.jpeg":
-#             return render_template("dashboard.html", result=0)
-#         else :
-#             return render_template("dashboard.html", result=1)
+
+
+
+

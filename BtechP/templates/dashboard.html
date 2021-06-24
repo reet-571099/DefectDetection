@@ -38,10 +38,7 @@
 
   </div>
 <div>
-<!--      <form action = "/dashboard" method = "post" enctype="multipart/form-data">-->
-<!--        <input type="file" name="file" />-->
-<!--        <input type = "submit" value="Upload">-->
-<!--      </form>-->
+
 
      <form action = "/dashboard" method = "post" enctype="multipart/form-data">
         <label  class="custom">
@@ -69,34 +66,55 @@
  </div>
 </div>
  <div class='container2'>
-  <ul>
-    <li>
-      <a type="submit" class='animated-arrow '>
-        <span class='the-arrow -left'>
-          <span class='shaft'></span>
-        </span>
-        <span class='main'>
-         <span class='text' >
-             Click here to Compute the Results
-         </span>
+<!--  <ul>-->
+<!--    <li>-->
+<!--      <a type="submit" class='animated-arrow '>-->
+<!--        <span class='the-arrow -left'>-->
+<!--          <span class='shaft'></span>-->
+<!--        </span>-->
+<!--        <span class='main'>-->
+<!--         <span class='text' >-->
+<!--             Click here to Compute the Results-->
+<!--         </span>-->
 
-          <span class='the-arrow -right'>
-            <span class='shaft'></span>
-         </span>
-        </span>
-      </a>
-    </li>
-  </ul>
+<!--          <span class='the-arrow -right'>-->
+<!--            <span class='shaft'></span>-->
+<!--         </span>-->
+<!--        </span>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+
+
 <!--     <button  type="submit" value="Submit" name ="compute" class="button" >Compute result</button>-->
-<!--     <form action="/dashboard" method="post"> &lt;!&ndash; or method="post" &ndash;&gt;-->
-<!--        <input type="submit" value="COMPUTE" name="compute" >-->
-<!--         {{result}}-->
-<!--    </form>-->
+<form class="form-horizontal" action="/success" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label " for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+     {% if prediction %}
+
+    <img src="{{res}}" height="400px" width="400px">
+	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+
+
+	{% endif %}
+
 </div>
     <div class='container3'>
-        <div>
-        <img src="../static/images/Yes1.jpg">
-        </div>
+
         <br>
         <br>
         <div>
