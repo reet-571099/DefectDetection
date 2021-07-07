@@ -46,7 +46,8 @@ def get_output():
         img.save(img_path)
         p = predict_label(img_path)
         r="static/"+"UploadedImages"+img.filename
-    return render_template("dashboard.html", prediction=p, img_path1=img_path,res=r)
+        imgname= img.filename
+    return render_template("dashboard.html", prediction=p, img_path1=img_path,res=r,imgname=imgname)
     #return render_template("dashboard.html")
 
 
@@ -101,7 +102,7 @@ def upload_image():
         return render_template("dashboard.html", filename=f.filename)
 
 
-
-
-
+@main.route('/layout')
+def test():
+    return render_template('layout.html')
 

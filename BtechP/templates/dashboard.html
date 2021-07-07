@@ -11,6 +11,7 @@
 </head>
 {% extends "base.html" %}
 {% block Content %}
+
 <body>
 
 <br>
@@ -39,13 +40,21 @@
   </div>
 <div>
 
+<form class="form-horizontal" action="/success" method="post" enctype="multipart/form-data">
 
-     <form action = "/dashboard" method = "post" enctype="multipart/form-data">
-        <label  class="custom">
-            <input id="file-upload" type="file" name="file"/>Select Image
-        </label>
-        <input type = "submit" value="Upload" style="color: black;">
-      </form>
+    <div class="form-group">
+      <label class="control-label custom" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">
+        <input type="file" accept="image/x-png, image/gif, image/jpeg " class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="button custom">Submit</button>
+      </div>
+    </div>
+  </form>
 
 </div>
 <hr>
@@ -60,8 +69,8 @@
 	  {% endif %}
 	{% endwith %}
 
-     Image Uploaded : {{filename}}
-     {{result}}
+     Image Uploaded : {{imgname}}
+
 </p>
  </div>
 </div>
@@ -87,41 +96,28 @@
 
 
 <!--     <button  type="submit" value="Submit" name ="compute" class="button" >Compute result</button>-->
-<form class="form-horizontal" action="/success" method="post" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <label class="control-label " for="pwd">Upload Your Image :</label>
-      <div class="col-sm-10">
-        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit</button>
-      </div>
-    </div>
-  </form>
 
      {% if prediction %}
 
     <img src="{{res}}" height="400px" width="400px">
-	<h2> Your Prediction   : <i> {{prediction}} </i></h2>
-
-
 
 	{% endif %}
 
 </div>
     <div class='container3'>
+        {% if prediction %}
 
-        <br>
-        <br>
+	<h2 class="float-left"> Result   : <i> {{prediction}} </i></h2>
+
+	    {% endif %}
+
         <div>
             <a href="./result">
-            <button  class="button2">Proceed Further</button>
+            <button  class="button2 ">Proceed Further</button>
             </a>
         </div>
+
     </div>
 </div>
 

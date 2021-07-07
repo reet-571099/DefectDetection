@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,7 @@
           <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
           <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/result.css')}}">
 	   	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Defect Detection</title>
 </head>
 {% extends "base.html" %}
@@ -28,21 +30,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>eCommerce Product Detail</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
   </head>
 
   <body>
 
-	<div class="container" style="width: 1300px !important">
-		<div class="card">
+	<div   class="container" style="width: 1300px !important">
+		<div id="printable1" class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-6">
 
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active"  id="pic-1"><img style="height:400px; width:400px;" src="../static/images/4207.jpeg" /></div>
+						  <div class="tab-pane active"  id="pic-1"><img style="height:400px; width:400px;" src="../static/images/87.jpeg" /></div>
 							<br>
 							<br>
 							<br>
@@ -51,21 +51,21 @@
 
 
 					</div>
-					<div class="details col-md-6">
+					<div id="printable" class="details col-md-6">
 						<h3 class="product-title">Category - Defective</h3>
 
 							<span class="review-no">ID No - 5710 </span>
 <!--						<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>-->
-						<h4 class="price">Type of Defect <span> - Hole </span></h4>
-						<p class="vote"><strong>91%</strong> Of Defect Found on this Part </p>
-						<h5 class="sizes"> Graphical Presentation :
+						<h4 class="price">Type of Defect <span> - Hole , Dent </span></h4>
+						<p class="vote"><strong>37%</strong> Of Defect Found on this Part </p>
+						<h5  class="sizes"> Graphical Presentation :
 							<br>
 							<br>
-							<img src="https://exceljet.net/sites/default/files/styles/original_with_watermark/public/images/charttypes/bar%20of%20pie%20chart.png?itok=VcMnMg2S">
+							<img src="../static/images/87_pie.png">
 						</h5>
 
 						<div class="action">
-							<button class="btn"><i class="fa fa-download"></i> Download</button>
+							<button onclick="window.print();" class="btn"><i class="fa fa-download"></i> Download</button>
 						</div>
 					</div>
 				</div>

@@ -382,14 +382,12 @@ body {
 }
 
 .container3 {
-  display: flex;
+   display: flex;
   align-items: center;
   justify-content: center;
-  display:inline-block;
-  position:relative;
   margin-left: 10%;
   color: #0c9692;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 ul li {
@@ -539,13 +537,12 @@ a:hover {
   background-color: #4db6ac;
   border: none;
   color: white;
-  padding: 15px 32px;
+
   text-align: center;
   text-decoration: none;
-  position:absolute;
+
   font-size: 19px;
-  margin: 4px 2px;
-  margin-left:90px;
+
   cursor: pointer;
 
 }
